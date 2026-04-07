@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StyleStore — Интернет-магазин</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+      <div class="navbar__inner">
+        <!-- Logo -->
+        <a href="#" class="navbar__logo">
+          <span class="logo-mark">S</span
+          ><span class="logo-text">tyle<em>Store</em></span>
+        </a>
+
+        <!-- Categories -->
+        <nav class="navbar__categories">
+          <a href="#" class="nav-link">Женщинам</a>
+          <a href="#" class="nav-link">Мужчинам</a>
+          <a href="#" class="nav-link">Детям</a>
+          <a href="#" class="nav-link">Электроника</a>
+          <a href="#" class="nav-link">Украшения</a>
+        </nav>
+
+        <!-- Search -->
+        <div class="navbar__search">
+          <svg
+            class="search-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input
+            type="text"
+            placeholder="Поиск товаров..."
+            class="search-input"
+          />
+        </div>
+
+        <!-- Icons -->
+        <div class="navbar__icons">
+          <button class="icon-btn" aria-label="Wishlist" id="nav-wishlist">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              />
+            </svg>
+            <span class="badge" id="wishlist-count">0</span>
+          </button>
+          <button class="icon-btn" aria-label="Cart" id="nav-cart">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              />
+            </svg>
+            <span class="badge" id="cart-count">0</span>
+          </button>
+          <button class="icon-btn" aria-label="Profile">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </button>
+
+          <!-- Language Selector -->
+          <div class="lang-selector">
+            <span class="lang-current">RU</span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              class="lang-arrow"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+            <div class="lang-dropdown">
+              <a href="#" class="lang-option active">RU</a>
+              <a href="#" class="lang-option">UZ</a>
+              <a href="#" class="lang-option">EN</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== HERO SLIDER ===== -->
+      <section class="hero" aria-label="Главный баннер">
+        <div class="slider" id="hero-slider">
+          <!-- Slide 1 -->
+          <div class="slide slide--1 active">
+            <div class="slide__content">
+              <span class="slide__tag">Новая коллекция 2025</span>
+              <h1 class="slide__title">
+                Стиль —<br />это язык<br /><em>без слов</em>
+              </h1>
+              <p class="slide__sub">
+                Откройте мир моды с нашими эксклюзивными коллекциями
+              </p>
+              <a href="#products" class="slide__cta">Перейти в каталог</a>
+            </div>
+            <div class="slide__visual">
+              <div class="slide__bg-shape"></div>
+              <img
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80"
+                alt="Fashion Collection"
+                class="slide__img"
+              />
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide slide--2">
+            <div class="slide__content">
+              <span class="slide__tag">Специальное предложение</span>
+              <h1 class="slide__title">
+                Скидки до<br /><em>50%</em> на<br />бестселлеры
+              </h1>
+              <p class="slide__sub">
+                Ограниченное время — успейте воспользоваться предложением
+              </p>
+              <a href="#products" class="slide__cta">Перейти в каталог</a>
+            </div>
+            <div class="slide__visual">
+              <div class="slide__bg-shape"></div>
+              <img
+                src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=80"
+                alt="Sale Collection"
+                class="slide__img"
+              />
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide slide--3">
+            <div class="slide__content">
+              <span class="slide__tag">Тренды сезона</span>
+              <h1 class="slide__title">
+                Будьте<br />впереди<br /><em>трендов</em>
+              </h1>
+              <p class="slide__sub">
+                Самые актуальные образы этого сезона уже в наличии
+              </p>
+              <a href="#products" class="slide__cta">Перейти в каталог</a>
+            </div>
+            <div class="slide__visual">
+              <div class="slide__bg-shape"></div>
+              <img
+                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80"
+                alt="Trends"
+                class="slide__img"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button
+          class="slider-btn slider-btn--prev"
+          id="slider-prev"
+          aria-label="Предыдущий"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button
+          class="slider-btn slider-btn--next"
+          id="slider-next"
+          aria-label="Следующий"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+
+        <!-- Dots -->
+        <div class="slider-dots" id="slider-dots">
+          <button
+            class="dot active"
+            data-index="0"
+            aria-label="Слайд 1"
+          ></button>
+          <button class="dot" data-index="1" aria-label="Слайд 2"></button>
+          <button class="dot" data-index="2" aria-label="Слайд 3"></button>
+        </div>
+      </section>
+
+      <!-- ===== CATEGORY CARDS ===== -->
+      <section class="categories" aria-label="Категории">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Категории</h2>
+            <a href="#" class="section-link">Все категории →</a>
+          </div>
+          <div class="categories__grid">
+            <a href="#" class="cat-card cat-card--sale">
+              <div class="cat-card__badge">–40%</div>
+              <div class="cat-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+                  />
+                  <line x1="7" y1="7" x2="7.01" y2="7" />
+                </svg>
+              </div>
+              <h3 class="cat-card__title">Sale</h3>
+              <p class="cat-card__sub">Скидки до 40%</p>
+            </a>
+
+            <a href="#" class="cat-card cat-card--new">
+              <div class="cat-card__badge">New</div>
+              <div class="cat-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <h3 class="cat-card__title">New Arrival</h3>
+              <p class="cat-card__sub">Новые поступления</p>
+            </a>
+
+            <a href="#" class="cat-card cat-card--sets">
+              <div class="cat-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="3" y="3" width="7" height="7" />
+                  <rect x="14" y="3" width="7" height="7" />
+                  <rect x="14" y="14" width="7" height="7" />
+                  <rect x="3" y="14" width="7" height="7" />
+                </svg>
+              </div>
+              <h3 class="cat-card__title">Комплекты</h3>
+              <p class="cat-card__sub">Готовые образы</p>
+            </a>
+
+            <a href="#" class="cat-card cat-card--top">
+              <div class="cat-card__badge">Top</div>
+              <div class="cat-card__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                  <polyline points="17 6 23 6 23 12" />
+                </svg>
+              </div>
+              <h3 class="cat-card__title">Топ</h3>
+              <p class="cat-card__sub">Лидеры продаж</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PRODUCTS SECTION ===== -->
+      <section class="products" id="products" aria-label="Товары">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Все товары</h2>
+            <div class="products__filters">
+              <button class="filter-btn active" data-filter="all">Все</button>
+              <button class="filter-btn" data-filter="men's clothing">
+                Мужчинам
+              </button>
+              <button class="filter-btn" data-filter="women's clothing">
+                Женщинам
+              </button>
+              <button class="filter-btn" data-filter="electronics">
+                Электроника
+              </button>
+              <button class="filter-btn" data-filter="jewelery">
+                Украшения
+              </button>
+            </div>
+          </div>
+
+          <!-- Loading State -->
+          <div class="products__loading" id="products-loading">
+            <div class="spinner"></div>
+            <p>Загружаем товары...</p>
+          </div>
+
+          <!-- Products Grid -->
+          <div
+            class="products__grid"
+            id="products-grid"
+            aria-live="polite"
+          ></div>
+
+          <!-- Pagination -->
+          <div class="pagination" id="pagination" aria-label="Пагинация"></div>
+        </div>
+      </section>
+    </main>
+
+    <section class="about-magazine">
+      <div class="about-bg"></div>
+      <div class="about-overlay"></div>
+
+      <div class="container about-content">
+        <h2 class="about-title">
+          О ИНТЕРНЕТ МАГАЗИНЕ
+          <span>TEZBRO</span>
+        </h2>
+
+        <p class="about-text">
+          Мы предлагаем лучшие товары по доступным ценам. Быстрая доставка,
+          высокое качество и современный стиль.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer fancy-footer">
+      <div class="footer-overlay"></div>
+
+      <div class="container footer-content">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>StyleStore</h3>
+            <p>Premium kiyim va aksessuarlar do‘koni</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Магазин</h4>
+            <a href="#">Новинки</a>
+            <a href="#">Распродажа</a>
+            <a href="#">Популярное</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Помощь</h4>
+            <a href="#">Доставка</a>
+            <a href="#">Возврат</a>
+            <a href="#">Контакты</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Контакты</h4>
+            <p>+998 00 000 00 00</p>
+            <p>info@site.uz</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">© 2025 StyleStore</div>
+      </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
